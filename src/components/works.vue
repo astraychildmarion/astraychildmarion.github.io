@@ -1,15 +1,36 @@
 <template lang="pug">
-  section#works
-    el-row.blockWork(:xs="24" :sm="12" v-for="(item) in portfolio" :key="item.index")
-      el-col.blockPic(:xs="24" :sm="12")
-        .workPic
-      el-col(:xs="24" :sm="12")
-        .workArticle
-          h5 {{item.name}}
-          p {{item.description}}
-          a(:href="item.link" v-if="item.link !== ''")
+  section#section2(ref="work")
+    u-animate-container
+      el-row.blockWork(:xs="24" :sm="12" v-for="(item) in portfolio" :key="item.index")
+        u-animate(
+          name="fadeInLeft"
+          delay=".5s"
+          duration=".5s"
+          :iteration="1"
+          :offset="100"
+          animateClass="animated"
+          :begin="false"
+          )
+          el-col.blockPic(:xs="24" :sm="12")
+            .workPic
+        u-animate(
+          name="fadeInRight"
+          delay=".5s"
+          duration=".5s"
+          :iteration="1"
+          :offset="100"
+          animateClass="animated"
+          :begin="false"
+        )
+          el-col(:xs="24" :sm="12")
+            .workArticle
+              h5 {{item.name}}
+              p {{item.description}}
+              a(:href="item.link" v-if="item.link !== ''")
 </template>
 <script>
+import {UAnimateContainer, UAnimate} from 'vue-wow'
+
 export default {
   name: 'works',
   data: function () {
@@ -53,6 +74,10 @@ export default {
         }
       ]
     }
+  },
+  components: {
+    UAnimateContainer,
+    UAnimate
   }
 }
 </script>
@@ -62,7 +87,7 @@ $blue: #b7d1e2;
 $red: #c9728b;
 $pink: #f7cdd6;
 $white: #f4f4f4;
-#works {
+#section2 {
   // background-image: linear-gradient(to left, gray 20%, white 20%, white 80%, gray 80%, gray 100% );
   background-attachment: fixed;
   min-height: 100vh;

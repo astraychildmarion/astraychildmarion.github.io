@@ -1,8 +1,17 @@
 <template lang="pug">
 header
-  h1 Wanderlust
+  h1
+    a.headerLink(
+      href="javascript:void(0)"
+      title="Lian's blog"
+       ) Wanderlust
   .headerWarp
-    a(v-for="(item,index) in headerMenu")(href="#", title="{item.title}").class
+    a.headerLink(
+      v-for="(item,index) in headerMenu"
+      href="javascript:void(0)"
+      title="item.title"
+      @click.prevent="jump('#section'+index)"
+      )
       .item
         h5 {{ item.nameEn}}
         h5(v-if="scrollTop") {{ item.nameCn}}
@@ -40,6 +49,13 @@ export default {
   methods: {
     handleScroll: function (e) {
       window.scrollY > 50 ? this.scrollTop = false : this.scrollTop = true
+    },
+    jump (selector) {
+      let sectionTag = document.querySelector(selector)
+      console.log(sectionTag)
+      document.body.scrollTop = sectionTag.offsetTop
+      document.documentElement.scrollTop = sectionTag.offsetTop
+      window.pageYOffset = sectionTag.offsetTop
     }
   }
 }
@@ -57,6 +73,17 @@ header{
     width: fit-content;
   }
 }
+.headerLink {
+  color: #111;
+  text-decoration: none;
+  padding: 10px;
+  &:hover {
+    color: #ff00ff;
+    text-shadow:1px #111;
+    margin-top:10px;
+    transition: all .5s;
+  }
+  }
 .headerWarp {
   display: flex;
   flex-direction: row;
@@ -67,16 +94,6 @@ header{
     text-align: center;
     h5{
       margin: 0;
-    }
-  }
-  a {
-    color: #111;
-    text-decoration: none;
-    &:hover {
-      color: #666;
-      text-shadow:1px #111;
-      margin-top:10px;
-      transition: all .5s;
     }
   }
 }

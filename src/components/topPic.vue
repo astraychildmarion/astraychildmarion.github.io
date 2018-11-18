@@ -1,5 +1,5 @@
 <template lang="pug">
-section#index(ref="indexPage")
+#index(ref="indexPage")
   .bgWrapper
     img(src="../assets/keepmovingon.jpg" :class="{ bigimg: noBlur}").indexImg
     .blurBg(v-if="noBlur == !true")
@@ -7,7 +7,7 @@ section#index(ref="indexPage")
   .indexTitle
     .whiteMask(:class="{ noMask: noBlur}")
     h2 KEEP GOING
-  goDown(v-show="noBlur" :scrolld="indexh")
+    goDown(v-show="noBlur" :scrolld="indexh")
 </template>
 <script>
 import goDown from './goDown'
@@ -26,12 +26,19 @@ export default {
   methods: {
     getIndexHeight: function () {
       this.indexh = this.$refs.indexPage.clientHeight
-      console.log(this.indexh)
       return this.indexh
+    }
+  },
+  watch: {
+    indexh (val) {
+      this.indexh = val
     }
   },
   mounted () {
     this.getIndexHeight()
+    window.onresize = () => {
+      this.getIndexHeight()
+    }
   }
 }
 </script>
@@ -41,7 +48,7 @@ $gradientBg:  rgba(255, 255, 255, .5);
 .el-main{
   padding:0;
 }
-section#index{
+#index{
   display: flex;
   padding-bottom: 100px;
   position: relative;

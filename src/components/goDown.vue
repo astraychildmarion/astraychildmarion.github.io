@@ -1,7 +1,7 @@
 <template lang="pug">
   .goDown(@click="moveNext(300)" class="animated infinite pulse slower")
     i.fa.fa-arrow-circle-down
-    span Scroll down
+    //- span Scroll down
 </template>
 <script>
 export default {
@@ -15,19 +15,26 @@ export default {
   methods: {
     handleScroll () {
       this.scrollTop = window.pageYOffset
+      // console.log(this.scrollTop)
     },
     moveNext (duration) {
-      console.log('interval run')
+      // console.log('interval run')
       let pace = (this.scrolld / duration)
       this.interval = setInterval(() => {
-        console.log(pace + 'pce++')
+        // console.log(pace + 'pce++')
         this.distance += pace
         window.scrollTo(0, this.distance)
-        if (this.scrollTop >= this.scrolld) {
+        if (this.scrollTop > this.scrolld) {
           window.scrollTo(0, this.scrolld)
           clearInterval(this.interval)
         }
       }, 10)
+    }
+  },
+  watch: {
+    scrolld (val) {
+      console.log('renew')
+      this.scrolld = val
     }
   },
   mounted () {

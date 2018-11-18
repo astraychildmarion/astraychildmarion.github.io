@@ -1,20 +1,40 @@
 <template lang="pug">
-section#favorite
+section#section1(ref="favorite")
   .frame
     //- h2.pageTitle Things I love
-    .swiperPosition
-      swiper.blockWrap(:options="swiperOption" ref="mySwiper")
-        .swiper-slide.blockLove(v-for="(item,index) in lovelist")
-          .picLove(@mouseover="loveHover = true" @mouseleave="loveHover = false")
-            .cube
-              h5.title {{item.name}}
-          p.blockp(v-show="loveHover") {{item.text}}
-      .swiper-button-prev(slot="button-prev")
-      .swiper-button-next(slot="button-prev")
+    u-animate-container
+      .swiperPosition
+        swiper.blockWrap(:options="swiperOption" ref="mySwiper")
+          .swiper-slide.blockLove(v-for="(item,index) in lovelist")
+            u-animate(
+              name="fadeInDown"
+              delay="1s"
+              duration=".5s"
+              :iteration="1"
+              :offset="100"
+              animateClass="animated"
+              :begin="false"
+              )
+              .picLove
+                .cube
+                  h5.title {{item.name}}
+            u-animate(
+              name="fadeInUp"
+              delay=".5s"
+              duration=".5s"
+              :iteration="1"
+              :offset="100"
+              animateClass="animated"
+              :begin="false"
+            )
+              p.blockp {{item.text}}
+        .swiper-button-prev(slot="button-prev")
+        .swiper-button-next(slot="button-prev")
 </template>
 <script>
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import {UAnimateContainer, UAnimate} from 'vue-wow'
 
 export default {
   name: 'favorite',
@@ -32,7 +52,7 @@ export default {
         },
         {
           name: 'Makeup',
-          text: '五歲的時候就拿老媽的口紅來玩，大學時失戀，為了找事情做，就去考彩妝師執照。有人喜歡隨筆塗鴉，對我來說，化妝就是在臉上畫畫，有時候創造一點心情，有時候遮掩一點疲倦。'
+          text: '大學時失戀，為了找事情做，就去考彩妝師執照。化妝就是在臉上畫畫，有時候創造一點心情，有時候遮掩一點疲倦。'
         },
         {
           name: 'Tarot',
@@ -50,13 +70,25 @@ export default {
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
-        }
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            slidesPerGroup: 1
+          },
+          500: {
+            slidesPerView: 1,
+            slidesPerGroup: 1
+          }
+        },
       }
     }
   },
   components: {
     swiper,
-    swiperSlide
+    swiperSlide,
+    UAnimateContainer,
+    UAnimate
   }
 }
 </script>
@@ -64,15 +96,15 @@ export default {
 $green: #2b7c93;
 $blue: #b7d1e2;
 $red: #c9728b;
-$pink: #f7cdd6;
+$pink: rgba(#f7cdd6, .5) ;
 $white: #f4f4f4;
 .frame {
-  padding: 100px 10% 200px;
+  padding: 120px 10% 150px;
   @media only screen and (max-width: 786px) {
-    padding: 50px;
+    padding: 150px 10px;
   }
   @media only screen and (max-width: 550px) {
-    padding: 30px 10px;
+    padding: 40px 10px 50px;
   }
 }
 .swiperPosition{
@@ -88,14 +120,20 @@ $white: #f4f4f4;
 }
 .blockLove {
   width: 30%;
+  @media only screen and (max-width: 7680px) {
+    width: 50%;
+  }
   @media only screen and (max-width: 550px) {
     width: 80%;
   }
     p.blockp {
-    font-family: "Caveat", cursive;
+    font-family: 'Rokkitt', serif;
     color: #111;
     font-size: 1em;
-    margin: 60px auto 50px;
+    margin: 0px auto 50px;
+    padding: 60px 10px 10px;
+    background-color: aliceblue;
+    min-height: 80px;
   }
 }
 .picLove {
@@ -119,10 +157,12 @@ $white: #f4f4f4;
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.5) 0, transparent 30%,transparent 70%, rgba(255, 255, 255, 0.5));
   }
   .cube {
-    width: 40%;
+    width: 60%;
     min-width: 100px;
     height: 80px;
-    background-color: $pink;
+    // background-color: $pink;
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg,$pink 0,$pink 25%, transparent 0,transparent 50%,$pink 0,$pink 75%, transparent 0,transparent 100%);
     position: absolute;
     bottom: -15%;
     left: 0;
@@ -157,15 +197,6 @@ $white: #f4f4f4;
 }
 .swiper-container{
   position:relative;
-  &:after{
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100%;
-    height:3px;
-    background-color: rgba(208, 48, 117, 0.6);
-    bottom: 0;
-  }
   .swiper-slide{
     &:after{
       content: '\f21e';
@@ -187,7 +218,43 @@ $white: #f4f4f4;
   }
 }
   .swiper-button-next, .swiper-button-prev{
-    top: unset;
-    bottom: -20px;
+    // position: relative;
+    background-image: unset;
+    // top: unset;
+    // bottom: -20px;
+  }
+  .swiper-button-next{
+    &:after{
+    content: '\f0a9';
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 2.5rem;
+      color: $green;
+      // background-color: #fff;
+      position: absolute;
+      display: block;
+      width: 30px;
+      height:30px;
+      // border-radius: 50%;
+      // bottom: 0;
+      right: -20px;
+    }
+  }
+  .swiper-button-prev{
+    &:after{
+      content: '\f0a8';
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 2.5rem;
+      color: $green;
+      // background-color: #fff;
+      position: absolute;
+      display: block;
+      width: 30px;
+      height:30px;
+      // border-radius: 50%;
+      // bottom: 0;
+      left: -20px;
+    }
   }
 </style>

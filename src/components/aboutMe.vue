@@ -1,5 +1,5 @@
 <template lang="pug">
-section#aboutMe(ref="aboutMe")
+section#section0(ref="aboutMe")
   .articleWrap
     u-animate-container
       el-row(:gutter="20")
@@ -8,7 +8,7 @@ section#aboutMe(ref="aboutMe")
           delay="0s"
           duration=".5s"
           :iteration="1"
-          :offset="0"
+          :offset="100"
           animateClass="animated"
           :begin="false")
           el-col(:xs="24" :sm="12")
@@ -19,7 +19,7 @@ section#aboutMe(ref="aboutMe")
           delay="s"
           duration=".5s"
           :iteration="1"
-          :offset="0"
+          :offset="100"
           animateClass="animated"
           :begin="false")
           el-col(:xs="24" :sm="12")
@@ -40,8 +40,8 @@ section#aboutMe(ref="aboutMe")
             p 直至今日，程式語言依舊是生活中一大挫折的來源(苦笑)，也只能把它當成第三外語，用心磨，每天磨。
             u-animate.animatedTitle(
               name="slideInRight"
-              delay="2s"
-              duration="2s"
+              delay="1s"
+              duration="1s"
               :iteration="1"
               :offset="0"
               animateClass="animated"
@@ -66,14 +66,14 @@ export default {
     UAnimate
   },
   methods: {
-    showOffset: function () {
-      console.log(this.objoffsetTop)
-    }
+    // showOffset: function () {
+    //   console.log(this.objoffsetTop)
+    // }
   }
 }
 </script>
 <style lang="scss">
-#aboutMe{
+#section0{
   padding: 100px 0;
     @media only screen and (max-width: 786px){
       padding: 50px 0 100px;
