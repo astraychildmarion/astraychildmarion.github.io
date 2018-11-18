@@ -22,8 +22,10 @@ export default {
 </script>
 <style lang="scss">
 .socialWarp {
-  position: absolute;
+  position: fixed;
   right: 0;
+  top:40%;
+  z-index: 10;
   &.socialhover {
     img {
       filter: grayscale(80%);
