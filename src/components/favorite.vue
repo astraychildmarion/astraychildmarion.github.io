@@ -80,7 +80,7 @@ export default {
             slidesPerView: 1,
             slidesPerGroup: 1
           }
-        },
+        }
       }
     }
   },

@@ -6,7 +6,7 @@
       el-main
         indexPic
         aboutMe
-        favorite
+        //- favorite
         works
         socialFloat
     el-footer
