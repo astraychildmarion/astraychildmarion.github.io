@@ -1,8 +1,17 @@
 <template lang="pug">
   .socialWarp(@mouseover="insocial = true" @mouseout="insocial = false" :class="{socialhover: insocial}")
-    .circle(v-for="(item,index) in socialMedia" :key="index")
-      a(:href="item.href", :title="item.title")
-        img(:src='item.imgSrc')
+    .circle
+      a(
+        href="https://www.linkedin.com/in/marion-ma-326248100"
+        title="Marion LinkedIn"
+        target="_blank"
+        )
+        img(src='../assets/linkedin.png')
+    .circle
+      a(href="mailto:allidareused@gmail.com"
+      title="Contact Me!"
+      )
+        img(src='../assets/gmail.png')
 </template>
 <script>
 export default {
@@ -10,23 +19,6 @@ export default {
   data: function () {
     return {
       insocial: false,
-      socialMedia: [
-        // {
-        //   title: '@astraychildalisha',
-        //   href: '#',
-        //   imgSrc: '../assets/instagram.png'
-        // },
-        {
-          title: 'Marion LinkedIn',
-          href: '#',
-          imgSrc: '../assets/linkedin.png'
-        },
-        {
-          title: 'Contact Me!',
-          href: '#',
-          imgSrc: '../assets/gmail.png'
-        }
-      ]
     }
   }
 }

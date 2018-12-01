@@ -6,7 +6,6 @@
     .targetPoint(@mouseenter="noBlur = true" class="animated infinite flash")
   .indexTitle
     h5 Stay optimistic.
-    h5 Fight back.
     h5 And
     h2 KEEP GOING
     goDown(v-show="noBlur" :scrolld="indexh")

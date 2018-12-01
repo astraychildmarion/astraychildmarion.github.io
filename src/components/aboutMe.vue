@@ -9,7 +9,7 @@ section#section0(ref="aboutMe")
         el-col(:xs="24" :sm="12")
           .right
             h4 馬麗安 , Marion Ma
-            h5 網頁設計師
+            h5 網頁設計師. 跨前端
     u-animate-container
       el-row(:gutter="20")
         u-animate(
@@ -151,9 +151,10 @@ export default {
 }
 .reportLink {
   background-color: #f6a2ee;
-  background-image: linear-gradient(to bottom, #f6a2ee, #d04f9c);
+  background-image: linear-gradient(-225deg, #96deda 0%, #57F2CC 48%, #50A7C2 100%);
   border-radius: 5px;
   border: 0;
+  border-bottom: 2px solid rgb(59, 56, 56);
   padding: 5px;
   margin: 0 auto;
   color: #111;
@@ -169,7 +170,7 @@ export default {
   &:active,
   &:focus {
     transition: 0.5s;
-    background-image: linear-gradient(to bottom, #d04f9c, #f6a2ee);
+    background-image: linear-gradient(-135deg, #96deda 0%, #57F2CC 48%, #50A7C2 100%);
   }
 }
 .animatedTitle {

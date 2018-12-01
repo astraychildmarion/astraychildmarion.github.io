@@ -75,12 +75,19 @@ header{
     font-family: 'Caveat', cursive;
     margin-left: 2rem;
     width: fit-content;
+      @media (max-width: 480px) {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
   }
 }
 .headerLink {
   color: #ff00ff;
   text-decoration: none;
   padding: 10px;
+  @media (max-width: 480px) {
+    padding: 5px 10px;
+}
   &:hover {
     color: #00ff00;
     text-shadow:1px #111;

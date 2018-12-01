@@ -1,5 +1,5 @@
 <template lang="pug">
-  section#section2(ref="work")
+  section#section1(ref="work")
     .list-item(v-for="(item, index) in portfolio" :key="item.index")
       .mask(v-show="item.mask")
       .list-content(@mouseenter="showSwitch(index)" @mouseleave="showSwitch(index)")
@@ -83,21 +83,21 @@ export default {
           mask: true
         }
       ]
-    };
+    }
   },
   methods: {
-    showSwitch: function(index) {
-      this.portfolio[index].mask = !this.portfolio[index].mask;
+    showSwitch: function (index) {
+      this.portfolio[index].mask = !this.portfolio[index].mask
       // 建立mask的個別性
     }
   }
-};
+}
 </script>
 <style lang="scss">
 $mask: #362fd1;
 $neon_word: #00ff00;
-#section2 {
-  padding: 100px 0%;
+#section1 {
+  padding: 100px 0% 0;
   overflow: hidden;
 }
 .mask {
@@ -160,13 +160,14 @@ $neon_word: #00ff00;
     position: relative;
     line-height: 20px;
     .reportLink {
-      width: 30%;
+      width: 40%;
       position: relative;
       bottom: 0;
       margin: 0;
+      text-align: center;
       @media (max-width: 767px) {
-        width: 40%;
         top: 10px;
+        margin-bottom: 30px;
       }
     }
   }
