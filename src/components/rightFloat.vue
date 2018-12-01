@@ -1,21 +1,32 @@
 <template lang="pug">
   .socialWarp(@mouseover="insocial = true" @mouseout="insocial = false" :class="{socialhover: insocial}")
-    .circle
-      a(href="#", title="@astraychildalisha")
-        img(src="../assets/instagram.png")
-    .circle
-      a(href="#", title="title")
-        img(src="../assets/linkedin.png")
-    .circle
-      a(href="#", title="title")
-        img(src="../assets/gmail.png")
+    .circle(v-for="(item,index) in socialMedia" :key="index")
+      a(:href="item.href", :title="item.title")
+        img(:src='item.imgSrc')
 </template>
 <script>
 export default {
   name: 'socialFloat',
   data: function () {
     return {
-      insocial: false
+      insocial: false,
+      socialMedia: [
+        // {
+        //   title: '@astraychildalisha',
+        //   href: '#',
+        //   imgSrc: '../assets/instagram.png'
+        // },
+        {
+          title: 'Marion LinkedIn',
+          href: '#',
+          imgSrc: '../assets/linkedin.png'
+        },
+        {
+          title: 'Contact Me!',
+          href: '#',
+          imgSrc: '../assets/gmail.png'
+        }
+      ]
     }
   }
 }

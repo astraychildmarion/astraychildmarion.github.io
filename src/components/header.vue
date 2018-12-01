@@ -3,8 +3,8 @@ header
   h1
     a.headerLink(
       href="javascript:void(0)"
-      title="Lian's blog"
-       ) Wanderlust
+      title="a front-end engineer wanna-be"
+       ) Marion as a web-developer
   .headerWarp
     a.headerLink(
       v-for="(item,index) in headerMenu"
@@ -24,17 +24,20 @@ export default {
       scrollTop: true,
       headerMenu: [
         {
-          title: 'wow',
+          title: '關於我',
           nameEn: 'About me',
-          nameCn: '關於我'},
+          nameCn: '關於我'
+        },
+        // {
+        //   title: 'wow',
+        //   nameEn: 'My Obsesion',
+        //   nameCn: '我著迷的'
+        // },
         {
-          title: 'wow',
-          nameEn: 'My Obsesion',
-          nameCn: '我著迷的'},
-        {
-          title: 'wow',
+          title: '作品集',
           nameEn: 'Portforio',
-          nameCn: '作品集'}
+          nameCn: '作品集'
+        }
       ]
     }
   },
@@ -67,6 +70,7 @@ header{
   left: 0;
   right: 0;
   z-index: 10;
+  background-color: transparent;
     h1{
     font-family: 'Caveat', cursive;
     margin-left: 2rem;
@@ -74,16 +78,16 @@ header{
   }
 }
 .headerLink {
-  color: #00ff00;
+  color: #ff00ff;
   text-decoration: none;
   padding: 10px;
   &:hover {
-    color: #ff00ff;
+    color: #00ff00;
     text-shadow:1px #111;
     margin-top:10px;
     transition: all .5s;
   }
-  }
+}
 .headerWarp {
   display: flex;
   flex-direction: row;
@@ -94,6 +98,7 @@ header{
     text-align: center;
     h5{
       margin: 0;
+      font-weight: bold;
     }
   }
 }

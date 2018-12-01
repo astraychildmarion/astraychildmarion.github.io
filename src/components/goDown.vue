@@ -56,7 +56,7 @@ export default {
   position: absolute;
   left: 0;
   right:0;
-  bottom:20%;
+  bottom:10%;
   transform: translateY(0);
   margin: auto;
   font-size: 2.8rem;

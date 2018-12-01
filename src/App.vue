@@ -42,5 +42,6 @@ export default {
 body{
     margin: 0;
     position: relative;
+    background-color: #000;
 }
 </style>
