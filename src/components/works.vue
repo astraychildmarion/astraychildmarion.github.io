@@ -16,70 +16,70 @@
           h3.list-title {{item.name}}
 </template>
 <script>
-import { UAnimateContainer, UAnimate } from "vue-wow";
+import { UAnimateContainer, UAnimate } from 'vue-wow'
 
 export default {
-  name: "works",
+  name: 'works',
   components: {
     UAnimateContainer,
     UAnimate
   },
-  data: function() {
+  data: function () {
     return {
       giveEffect: false,
       contentShow: false,
       portfolio: [
         {
-          name: "Alchemycoin",
+          name: 'Alchemycoin',
           description:
-            "Alchemy P2P 網路借貸平台的第二版網站，業主在北美地區運作。此網站與另外一位設計師合作。我們產出整個網站的Layout，還有切版以及CSS撰寫。",
-          link: "https://alchemycoin.io/#",
-          company: "Alchemy",
-          type: "網頁設計 + 切版 + 動態",
+            'Alchemy P2P 網路借貸平台的第二版網站，業主在北美地區運作。此網站與另外一位設計師合作。我們產出整個網站的Layout，還有切版以及CSS撰寫。',
+          link: 'https://alchemycoin.io/#',
+          company: 'Alchemy',
+          type: '網頁設計 + 切版 + 動態',
           mask: true
         },
         {
-          name: "Archimist back",
+          name: 'Archimist back',
           description:
-            "Alchemy P2P 網路借貸平台的第一版網站的後台，此網站與另外一位設計師合作，我擔綱主視覺設計、CSS架構發想。此專案導入Bootstrap3,依循OOCSS的規範方式，架構專屬該後台的CSS libary。",
-          link: "",
-          company: "Alchemy",
-          type: "網頁設計 + 切版 + 動態",
+            'Alchemy P2P 網路借貸平台的第一版網站的後台，此網站與另外一位設計師合作，我擔綱主視覺設計、CSS架構發想。此專案導入Bootstrap3,依循OOCSS的規範方式，架構專屬該後台的CSS libary。',
+          link: '',
+          company: 'Alchemy',
+          type: '網頁設計 + 切版 + 動態',
           mask: true
         },
         {
-          name: "Pocket_Rus",
+          name: 'Pocket_Rus',
           description:
-            "資策會的畢業作品，使用套件Skrollr，生動地展現首頁動畫。動畫素材取自網路上的刺繡線稿，由Photoshop後製成手繪風格。我負責網頁主視覺及首頁動畫，另外一位夥伴負責資料庫。連結內展示Demo影片。",
-          link: "https://www.youtube.com/embed/C9QW6P98oTc",
-          company: "資策會",
-          type: "網頁設計 + 切版 + 動態",
+            '資策會的畢業作品，使用套件Skrollr，生動地展現首頁動畫。動畫素材取自網路上的刺繡線稿，由Photoshop後製成手繪風格。我負責網頁主視覺及首頁動畫，另外一位夥伴負責資料庫。連結內展示Demo影片。',
+          link: 'https://www.youtube.com/embed/C9QW6P98oTc',
+          company: '資策會',
+          type: '網頁設計 + 切版 + 動態',
           mask: true
         },
         {
-          name: "Vue PhoneBook",
+          name: 'Vue PhoneBook',
           description:
-            "曾經面試過的公司出的試題，隨著對Vue知識的增加，一再回去更改作法。從笨作法到比較不笨的作法，漸漸活用Vue.js",
-          link: "https://codepen.io/MarionMa/pen/pQRoOK",
-          company: "",
-          type: "JS練習",
+            '曾經面試過的公司出的試題，隨著對Vue知識的增加，一再回去更改作法。從笨作法到比較不笨的作法，漸漸活用Vue.js',
+          link: 'https://codepen.io/MarionMa/pen/pQRoOK',
+          company: '',
+          type: 'JS練習',
           mask: true
         },
         {
-          name: "午餐救星",
+          name: '午餐救星',
           description:
-            "原本為了練習css3 的Transform效果，結果越寫越開心。一開始手動寫出所有的食物，後來改用陣列，最近加入隨機數。下一步要用Vue改寫",
-          link: "https://codepen.io/MarionMa/pen/eGpvLY",
-          company: "",
-          type: "JS練習",
+            '原本為了練習css3 的Transform效果，結果越寫越開心。一開始手動寫出所有的食物，後來改用陣列，最近加入隨機數。下一步要用Vue改寫',
+          link: 'https://codepen.io/MarionMa/pen/eGpvLY',
+          company: '',
+          type: 'JS練習',
           mask: true
         },
         {
-          name: "Gaming",
-          description: "任職公司期間所執行的專案。底圖經過模糊化處理",
-          link: "",
-          company: "Keep secret",
-          type: "網頁設計 + 切版 + 動態",
+          name: 'Gaming',
+          description: '任職公司期間所執行的專案。底圖經過模糊化處理',
+          link: '',
+          company: 'Keep secret',
+          type: '網頁設計 + 切版 + 動態',
           mask: true
         }
       ]
@@ -97,7 +97,7 @@ export default {
 $mask: #362fd1;
 $neon_word: #00ff00;
 #section1 {
-  padding: 100px 0% 0;
+  padding: 30px 0% 0;
   overflow: hidden;
 }
 .mask {
@@ -109,8 +109,8 @@ $neon_word: #00ff00;
   background-color: #362fd1;
   opacity: 1;
   transition: opacity 0.5s;
-  @media (max-width: 767px) {
-      background-color: rgba(#362fd1, .3);
+  @media (max-width: 1200px) {
+      background-color: rgba(#362fd1, .8);
     }
 }
 .list-item {
@@ -136,7 +136,10 @@ $neon_word: #00ff00;
     color: $neon_word;
   }
   .list-title {
+    word-break: break-all;
     font-size: 70px;
+    word-wrap:break-word;
+    overflow: hidden;
     color: $neon_word;
   }
   .main {
@@ -145,10 +148,12 @@ $neon_word: #00ff00;
     padding-left: 20px;
     flex: 2;
     @media (max-width: 767px) {
+      min-height: 150px;
       padding-top: 20px;
       flex: 1;
       h3 {
-        margin-top: 40px;
+        margin: 30px 0;
+        font-size: 60px;
       }
     }
   }
@@ -163,11 +168,12 @@ $neon_word: #00ff00;
       width: 40%;
       position: relative;
       bottom: 0;
-      margin: 0;
+      margin: 10px 0 0;
       text-align: center;
       @media (max-width: 767px) {
         top: 10px;
         margin-bottom: 30px;
+        width: 100%;
       }
     }
   }
@@ -189,10 +195,11 @@ $neon_word: #00ff00;
     color: #aaa;
   }
   .des {
+    color: #eee;
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 0;
-    opacity: 0.5;
+    opacity: 0.8;
   }
 }
 .list-item:nth-child(1) {

@@ -18,7 +18,7 @@ export default {
   name: 'socialFloat',
   data: function () {
     return {
-      insocial: false,
+      insocial: false
     }
   }
 }

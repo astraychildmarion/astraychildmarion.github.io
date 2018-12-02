@@ -1,15 +1,15 @@
 <template lang="pug">
 section#section0(ref="aboutMe")
   .articleWrap
-    .aboutMeHeader
-      el-row
-        el-col(:xs="24" :sm="12")
-          .left
-            h4 Who I am ?
-        el-col(:xs="24" :sm="12")
-          .right
-            h4 馬麗安 , Marion Ma
-            h5 網頁設計師. 跨前端
+    //- .aboutMeHeader
+    //-   el-row
+    //-     el-col(:xs="24" :sm="12")
+    //-       .left
+    //-         h4 Who I am ?
+    //-     el-col(:xs="24" :sm="12")
+    //-       .right
+    //-         h4 馬麗安 , Marion Ma
+    //-         h5 網頁設計師. 跨前端
     u-animate-container
       el-row(:gutter="20")
         u-animate(
@@ -61,14 +61,14 @@ section#section0(ref="aboutMe")
               | JAVASCRIPT
 </template>
 <script>
-import { UAnimateContainer, UAnimate } from "vue-wow";
+import { UAnimateContainer, UAnimate } from 'vue-wow'
 
 export default {
-  name: "aboutMe",
-  data: function() {
+  name: 'aboutMe',
+  data: function () {
     return {
       objoffsetTop: this.offsetTop
-    };
+    }
   },
   components: {
     UAnimateContainer,
@@ -79,13 +79,13 @@ export default {
     //   console.log(this.objoffsetTop)
     // }
   }
-};
+}
 </script>
 <style lang="scss">
 #section0 {
   padding: 40px 80px 100px;
   @media only screen and (max-width: 786px) {
-    padding: 30px 0 100px;
+    padding: 30px 0 30px;
   }
 }
 .aboutMeHeader {
@@ -159,6 +159,9 @@ export default {
   margin: 0 auto;
   color: #111;
   width: 80%;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
   a {
     display: block;
     width: 100%;
@@ -175,7 +178,7 @@ export default {
 }
 .animatedTitle {
   position: absolute;
-  bottom: -10%;
+  bottom: 10%;
   font-size: 5rem;
   padding-left: 5%;
   font-style: italic;

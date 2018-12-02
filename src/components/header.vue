@@ -1,20 +1,19 @@
 <template lang="pug">
-header
-  h1
-    a.headerLink(
-      href="javascript:void(0)"
-      title="a front-end engineer wanna-be"
-       ) Marion as a web-developer
-  .headerWarp
-    a.headerLink(
-      v-for="(item,index) in headerMenu"
-      href="javascript:void(0)"
-      title="item.title"
-      @click.prevent="jump('#section'+index)"
+.headerWrap
+  a.headerLink(
+    href="javascript:void(0)"
+    title="a front-end engineer wanna-be"
       )
-      .item
-        h5 {{ item.nameEn}}
-        h5(v-if="scrollTop") {{ item.nameCn}}
+    b MarionDesign.
+  a.headerItemLink(
+    v-for="(item,index) in headerMenu"
+    href="javascript:void(0)"
+    title="item.title"
+    @click.prevent="jump('#section'+index)"
+    )
+    .item(:class="{ moveDown : !scrollTop }")
+      b {{ item.nameEn}}
+      b(v-if="scrollTop") {{ item.nameCn}}
 </template>
 <script>
 export default {
@@ -25,7 +24,7 @@ export default {
       headerMenu: [
         {
           title: '關於我',
-          nameEn: 'About me',
+          nameEn: 'AboutMe',
           nameCn: '關於我'
         },
         // {
@@ -64,48 +63,66 @@ export default {
 }
 </script>
 <style lang="scss">
-header{
+.el-header{
+  width: 100%;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  background-color: rgba($color: #000000, $alpha: .3);
+  background-image: linear-gradient(to bottom, rgba($color: #16222A, $alpha: .5) , rgba($color: #3A6073, $alpha: .3));
   z-index: 10;
-  background-color: transparent;
-    h1{
-    font-family: 'Caveat', cursive;
-    margin-left: 2rem;
-    width: fit-content;
-      @media (max-width: 480px) {
-    margin-top: 0;
-    margin-bottom: 10px;
+  display: flex;
+  padding: 10px 0 0 20px;
 }
+.headerWrap{
+  background-color: transparent;
+  display: flex;
+  a{
+    padding: 0;
+    text-decoration: none;
   }
 }
 .headerLink {
-  color: #ff00ff;
   text-decoration: none;
-  padding: 10px;
+  padding: 0 2rem;
+  font-size: 36px;
+  font-weight: bold;
+  b{
+    color: #fff;
+    &:hover {
+      color: #00ff00;
+      text-shadow:1px #111;
+      transition: all .5s;
+    }
+  }
   @media (max-width: 480px) {
     padding: 5px 10px;
-}
-  &:hover {
-    color: #00ff00;
-    text-shadow:1px #111;
-    margin-top:10px;
-    transition: all .5s;
+    font-size: 18px;
+    margin-top: 10px;
   }
 }
-.headerWarp {
+.headerItemLink {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: fit-content;
+    @media (max-width: 767px) {
+    width: 100%;
+  }
   .item {
+    color: #ccc;
     margin: 0 20px;
     text-align: center;
-    h5{
+      &:hover {
+      color: #00ff00;
+      text-shadow:1px #111;
+      transition: all .5s;
+    }
+      &.moveDown {
+      margin-top:10px;
+      transition: all .5s;
+    }
+    b{
       margin: 0;
       font-weight: bold;
+      display: block;
     }
   }
 }
