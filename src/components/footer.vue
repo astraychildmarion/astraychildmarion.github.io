@@ -1,6 +1,6 @@
 <template lang="pug">
 .footer
-  p 任何工作機會，都可以聯絡我。
+  p 合作機會歡迎聯絡。
   p 請點選右側Gmail圖示，或是寄信至allidareused@gmail.com
   p 2018 Marion Ma Copy Right
 </template>
