@@ -6,7 +6,6 @@ section#resume
         .block.personal
           u-animate(
           name="fadeInLeft"
-          delay="s"
           duration=".5s"
           :iteration="1"
           :offset="100"
@@ -19,7 +18,6 @@ section#resume
       el-col(:xs="24" :sm="8")
         u-animate(
           name="fadeInUp"
-          delay="0s"
           duration=".5s"
           :iteration="1"
           :offset="100"
@@ -38,21 +36,12 @@ section#resume
               p 
                 b 工作經驗
                 |&nbsp&nbsp5年
-      el-col(:xs="24" :sm="8")
-        u-animate(
-          name="fadeInUp"
-          delay="0s"
-          duration=".5s"
-          :iteration="1"
-          :offset="100"
-          animateClass="animated"
-          :begin="false"
-          )
-          .block
-            .block-title 求學過程
-            .block-content
-              p 國立政治大學 斯拉夫語文學系 俄文組
-              p 資策會 UI/UX 設計師養成班
+              p
+                b 求學過程
+                br
+                |國立政治大學 斯拉夫語文學系 俄文組
+                br
+                |資策會 UI/UX 設計師養成班
       el-col(:xs="24" :sm="8")
         u-animate(
           name="fadeInUp"
@@ -155,8 +144,8 @@ export default {
   background: linear-gradient(
     to bottom,
     #000 5%,
-    #2e1437 30%,
-    #2a0845 60%,
+    #2e1437 70%,
+    #362fd1 99%,
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .block {
@@ -166,17 +155,18 @@ export default {
   font-family: "Noto Sans TC", "Rokkitt", sans-serif;
   padding: 30px;
   padding-left: 80px;
-  min-height: 250px;
+  height: 250px;
   margin-bottom: 20px;
   &.personal {
     background-color: transparent;
     box-shadow: unset;
     .block-title {
-      color: #61FBAD;
+      color: #f0f0f0;
       font-size: 36px;
       font-weight: bold;
       margin-bottom: 20px;
       text-align: right;
+      border:0;
       &:after,
       &:before {
         display: none;
@@ -215,7 +205,7 @@ export default {
       content: counter(num) ".";
       width: 30px;
       height: 30px;
-      background-color: #666;
+      // background-color: #666;
       color: #fff;
       display: block;
       position: absolute;
@@ -226,11 +216,14 @@ export default {
     }
   }
   &-content {
-    color: #aaa;
+    color: #ccc;
     font-size: 16px;
     line-height: 1.2;
     text-transform: uppercase;
     word-break: break-all;
+    b{
+      color: #888;
+    }
   }
 }
 </style>

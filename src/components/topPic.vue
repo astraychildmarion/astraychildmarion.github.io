@@ -11,37 +11,37 @@
     goDown(v-show="noBlur" :scrolld="indexh")
 </template>
 <script>
-import goDown from './goDown'
+import goDown from "./goDown";
 
 export default {
   name: 'indexPic',
-  data: function () {
+  data: function() {
     return {
       noBlur: false,
-      indexh: ''
-    }
+      indexh: ""
+    };
   },
   components: {
     goDown
   },
   watch: {
-    indexh (val) {
-      this.indexh = val
+    indexh(val) {
+      this.indexh = val;
     }
   },
-  mounted () {
-    this.getIndexHeight()
+  mounted() {
+    this.getIndexHeight();
     window.onresize = () => {
-      this.getIndexHeight()
-    }
+      this.getIndexHeight();
+    };
   },
   methods: {
-    getIndexHeight: function () {
-      this.indexh = this.$refs.indexPage.clientHeight
-      return this.indexh
+    getIndexHeight: function() {
+      this.indexh = this.$refs.indexPage.clientHeight;
+      return this.indexh;
     }
   }
-}
+};
 </script>
 <style lang="scss">
 $gradientBg: rgba(255, 255, 255, 0.5);
@@ -60,6 +60,9 @@ $gradientBg: rgba(255, 255, 255, 0.5);
   display: inline-block;
   position: relative;
   overflow: hidden;
+  @media (max-width: 767px) {
+    display: none;
+  }
   .targetPoint {
     width: 30px;
     height: 30px;
@@ -89,18 +92,21 @@ $gradientBg: rgba(255, 255, 255, 0.5);
   justify-content: center;
   text-align: center;
   color: #fff;
+  @media (max-width: 767px) {
+    height: 100vh;
+  }
   h5 {
     font-size: 2rem;
     margin: 10px auto;
     font-weight: 500;
     letter-spacing: 1px;
-    font-family: 'Rokkitt', serif;
+    font-family: "Rokkitt", serif;
   }
   h2 {
     font-size: 4rem;
     letter-spacing: 5px;
     margin: 20px auto;
-    font-family: 'Rokkitt', serif;
+    font-family: "Rokkitt", serif;
   }
 }
 .indexImg {
