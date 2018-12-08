@@ -6,6 +6,7 @@
       el-main
         indexPic
         aboutMe
+        resume
         //- favorite
         works
         socialFloat
@@ -16,6 +17,7 @@
 <script>
 import headerWarp from './components/header'
 import aboutMe from './components/aboutMe'
+import resume from './components/resume'
 import favorite from './components/favorite'
 import socialFloat from './components/rightFloat'
 import works from './components/works'
@@ -27,6 +29,7 @@ export default {
   components: {
     headerWarp,
     aboutMe,
+    resume,
     favorite,
     socialFloat,
     works,
@@ -37,7 +40,7 @@ export default {
 </script>
 <style lang="scss">
 *{
-  font-family: 'Rokkitt', serif;
+  font-family: 'Noto Sans TC', 'Rokkitt', 'Caveat', serif;
 }
 body{
     margin: 0;

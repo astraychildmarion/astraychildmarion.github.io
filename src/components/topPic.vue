@@ -94,11 +94,13 @@ $gradientBg: rgba(255, 255, 255, 0.5);
     margin: 10px auto;
     font-weight: 500;
     letter-spacing: 1px;
+    font-family: 'Rokkitt', serif;
   }
   h2 {
     font-size: 4rem;
     letter-spacing: 5px;
     margin: 20px auto;
+    font-family: 'Rokkitt', serif;
   }
 }
 .indexImg {

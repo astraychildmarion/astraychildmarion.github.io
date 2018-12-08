@@ -1,7 +1,6 @@
 <template lang="pug">
 .headerWrap
-  a.headerLink(
-    href="javascript:void(0)"
+  .headerLink(
     title="a front-end engineer wanna-be"
       )
     b MarionDesign.
@@ -17,15 +16,15 @@
 </template>
 <script>
 export default {
-  name: 'headerWarp',
-  data: function () {
+  name: "headerWarp",
+  data: function() {
     return {
       scrollTop: true,
       headerMenu: [
         {
-          title: '關於我',
-          nameEn: 'AboutMe',
-          nameCn: '關於我'
+          title: "關於我",
+          nameEn: "AboutMe",
+          nameCn: "關於我"
         },
         // {
         //   title: 'wow',
@@ -33,51 +32,57 @@ export default {
         //   nameCn: '我著迷的'
         // },
         {
-          title: '作品集',
-          nameEn: 'Portforio',
-          nameCn: '作品集'
+          title: "作品集",
+          nameEn: "Portforio",
+          nameCn: "作品集"
         }
       ]
-    }
+    };
   },
-  mounted () {
-    window.addEventListener('scroll', this.handleScroll)
-    console.log('scrolling Injected')
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+    console.log("scrolling Injected");
   },
-  beforeDestroy () {
-    window.removeEventListener('scroll', this.handleScroll)
-    console.log('scrolling Destroyed')
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
+    console.log("scrolling Destroyed");
   },
   methods: {
-    handleScroll: function (e) {
-      window.scrollY > 50 ? this.scrollTop = false : this.scrollTop = true
+    handleScroll: function(e) {
+      window.scrollY > 50 ? (this.scrollTop = false) : (this.scrollTop = true);
     },
-    jump (selector) {
-      let sectionTag = document.querySelector(selector)
-      console.log(sectionTag)
-      document.body.scrollTop = sectionTag.offsetTop
-      document.documentElement.scrollTop = sectionTag.offsetTop
-      window.pageYOffset = sectionTag.offsetTop
+    jump(selector) {
+      let sectionTag = document.querySelector(selector);
+      console.log(sectionTag);
+      document.body.scrollTop = sectionTag.offsetTop;
+      document.documentElement.scrollTop = sectionTag.offsetTop;
+      window.pageYOffset = sectionTag.offsetTop;
     }
   }
-}
+};
 </script>
 <style lang="scss">
-.el-header{
+.el-header {
   width: 100%;
   position: fixed;
-  background-color: rgba($color: #000000, $alpha: .3);
-  background-image: linear-gradient(to bottom, rgba($color: #16222A, $alpha: .5) , rgba($color: #3A6073, $alpha: .3));
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  background-image: linear-gradient(
+    to bottom,
+    rgba($color: #16222a, $alpha: 0.5),
+    rgba($color: #3a6073, $alpha: 0.3)
+  );
   z-index: 10;
   display: flex;
   padding: 10px 0 0 20px;
 }
-.headerWrap{
+.headerWrap {
   background-color: transparent;
   display: flex;
-  a{
-    padding: 0;
-    text-decoration: none;
+  padding: 0;
+  text-decoration: none;
+  b {
+    font-family: "Caveat", serif;
+     font-size: 14px; 
   }
 }
 .headerLink {
@@ -85,12 +90,14 @@ export default {
   padding: 0 2rem;
   font-size: 36px;
   font-weight: bold;
-  b{
+  b {
     color: #fff;
+    font-size: 28px;
+    vertical-align: text-top;
     &:hover {
       color: #00ff00;
-      text-shadow:1px #111;
-      transition: all .5s;
+      text-shadow: 1px #111;
+      transition: all 0.5s;
     }
   }
   @media (max-width: 480px) {
@@ -100,26 +107,27 @@ export default {
   }
 }
 .headerItemLink {
+  text-decoration: none;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-    @media (max-width: 767px) {
+  @media (max-width: 767px) {
     width: 100%;
   }
   .item {
     color: #ccc;
     margin: 0 20px;
     text-align: center;
-      &:hover {
+    &:hover {
       color: #00ff00;
-      text-shadow:1px #111;
-      transition: all .5s;
+      text-shadow: 1px #111;
+      transition: all 0.5s;
     }
-      &.moveDown {
-      margin-top:10px;
-      transition: all .5s;
+    &.moveDown {
+      margin-top: 10px;
+      transition: all 0.5s;
     }
-    b{
+    b {
       margin: 0;
       font-weight: bold;
       display: block;

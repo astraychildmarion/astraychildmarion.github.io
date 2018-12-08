@@ -34,12 +34,15 @@ section#section0(ref="aboutMe")
           el-col(:xs="24" :sm="12" :gutter="20")
             //- h4 馬麗安 , Marion Ma
             //- h5 網頁設計師:
-            p  兩年之前進入網頁領域，過去擔任過: FB廣告投放手、英語文件翻譯、俄文業務、外電新聞編譯。
+            p
+              b 我是馬麗安，兩年前轉換跑道成為網頁設計師。
               br
               |目前持續自學Javascript以加強深度；目標是成為前端工程師。
-            p  剛自學校畢業的時候，完全沒料到會過著敲鍵盤的日子。曾接受數位時代雜誌的文科生轉職專題採訪，連結在下方。
-            p 在設計和程式這兩件事上面，我依然是麻瓜一枚。在浩瀚的網頁世界裡，相信自己能完成任務，保持樂觀，不服輸，然後繼續學習。
-            p.btw 個人網頁使用Vue-cil為腳手架，scss + pug 做頁面開發。
+            p  過去曾擔任過: FB廣告投放手、英語文件翻譯、俄文業務、外電新聞編譯。
+            p  畢業於政治大學斯拉夫語文學系俄文組。剛自學校畢業的時候，完全沒料到會過著敲鍵盤的日子。曾接受數位時代雜誌的文科生轉職專題採訪，連結在下方。
+            p  因為喜歡說故事，所以跑去新聞業；想了解行銷，在手遊代理商做過FB操盤。今天，在最貼近人的行動裝置上，用網頁說故事。
+            //- p  在設計和程式這兩件事上面，我依然是麻瓜一枚。在浩瀚的網頁世界裡，相信自己能完成任務，保持樂觀，不服輸，然後繼續學習。
+            p.btw 個人網頁使用Vue-cil為腳手架，webpack 打包 scss + pug。
             button.reportLink
               a(
                 href="https://www.bnext.com.tw/article/48027/coding-change-marian-life"
@@ -65,14 +68,14 @@ import { UAnimateContainer, UAnimate } from 'vue-wow'
 
 export default {
   name: 'aboutMe',
+  components: {
+    UAnimateContainer,
+    UAnimate
+  },
   data: function () {
     return {
       objoffsetTop: this.offsetTop
     }
-  },
-  components: {
-    UAnimateContainer,
-    UAnimate
   },
   methods: {
     // showOffset: function () {

@@ -97,7 +97,7 @@ export default {
 $mask: #362fd1;
 $neon_word: #00ff00;
 #section1 {
-  padding: 30px 0% 0;
+  padding: 0;
   overflow: hidden;
 }
 .mask {
@@ -141,6 +141,7 @@ $neon_word: #00ff00;
     word-wrap:break-word;
     overflow: hidden;
     color: $neon_word;
+    font-family: 'Rokkitt', serif;
   }
   .main {
     position: relative;
@@ -170,6 +171,7 @@ $neon_word: #00ff00;
       bottom: 0;
       margin: 10px 0 0;
       text-align: center;
+      font-family: 'Rokkitt', serif;
       @media (max-width: 767px) {
         top: 10px;
         margin-bottom: 30px;
@@ -182,11 +184,13 @@ $neon_word: #00ff00;
     font-size: 18px;
     line-height: 1;
     margin-bottom: 10px;
+    font-family: 'Rokkitt', serif;
   }
   .title {
     font-size: 40px;
     line-height: 1;
     margin-bottom: 0;
+    font-family: 'Rokkitt', serif;
   }
   .type {
     font-size: 14px;
