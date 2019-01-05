@@ -4,16 +4,15 @@
       .mask(v-show="item.mask")
       .list-content(@mouseenter="showSwitch(index)" @mouseleave="showSwitch(index)")
         .meta
-          p.type {{item.type}}
+          .type(v-for="(p,index) in item.type") {{p}}
           p.des {{item.description}}
+        .main
+          h3.list-title {{item.name}}
           button.reportLink(v-show="item.link !== ''")
             a(
               :href="item.link"
               target="_blank"
-              ) Visit project
-        .main
-          p.company {{item.company}}
-          h3.list-title {{item.name}}
+              ) Visit this project
 </template>
 <script>
 import { UAnimateContainer, UAnimate } from 'vue-wow'
@@ -32,54 +31,54 @@ export default {
         {
           name: 'Alchemycoin',
           description:
-            'Alchemy P2P 網路借貸平台的第二版網站，業主在北美地區運作。此網站與另外一位設計師合作。我們產出整個網站的Layout，還有切版以及CSS撰寫。',
+            'Alchemy P2P 網路借貸平台的第二版網站，業主在北美地區運作。此專案與接案夥伴合作。我們產出整個網站的Layout圖檔，切版以及CSS撰寫。',
           link: 'https://alchemycoin.io/#',
           company: 'Alchemy',
-          type: '網頁設計 + 切版 + 動態',
+          type: ['網頁設計','scss/css3','pug/html','JQuery','Design Guideline','Bootstrap3'],
           mask: true
         },
         {
           name: 'Archimist back',
           description:
-            'Alchemy P2P 網路借貸平台的第一版網站的後台，此網站與另外一位設計師合作，我擔綱主視覺設計、CSS架構發想。此專案導入Bootstrap3,依循OOCSS的規範方式，架構專屬該後台的CSS libary。',
+            'Alchemy P2P 網路借貸平台的第一版網站的後台，此專案與接案夥伴合作。我擔綱主視覺設計、產出Guideline、css切版。此專案導入Bootstrap3，依循OOCSS的規範方式，架構專屬該後台的CSS libary。',
           link: '',
           company: 'Alchemy',
-          type: '網頁設計 + 切版 + 動態',
+          type: ['網頁設計','UX規劃','scss/css3','pug/html', 'JQuery','Design Guideline','Bootstrap3'],
           mask: true
         },
         {
           name: 'Pocket_Rus',
           description:
-            '資策會的畢業作品，使用套件Skrollr，生動地展現首頁動畫。動畫素材取自網路上的刺繡線稿，由Photoshop後製成手繪風格。我負責網頁主視覺及首頁動畫，另外一位夥伴負責資料庫。連結內展示Demo影片。',
+            '人生第一個完整的作品--資策會的畢業作品，使用套件Skrollr生動地展現首頁動畫。我負責網頁主視覺及首頁動畫，另外一位夥伴負責資料庫。連結內展示Demo影片。',
           link: 'https://www.youtube.com/embed/C9QW6P98oTc',
           company: '資策會',
-          type: '網頁設計 + 切版 + 動態',
+          type: ['網頁設計','UX規劃','scss/css3','html', 'JQuery','Bootstrap3','Skrollr'],
           mask: true
         },
         {
           name: 'Vue PhoneBook',
           description:
-            '曾經面試過的公司出的試題，隨著對Vue知識的增加，一再回去更改作法。從笨作法到比較不笨的作法，漸漸活用Vue.js',
+            'Vue.js試題，隨著對Vue知識的增加，一再回去更改作法。從笨作法到比較不笨的作法，漸漸活用Vue.js',
           link: 'https://codepen.io/MarionMa/pen/pQRoOK',
           company: '',
-          type: 'JS練習',
+          type: ['Vue.js'],
           mask: true
         },
         {
           name: '午餐救星',
           description:
-            '原本為了練習css3 的Transform效果，結果越寫越開心。一開始手動寫出所有的食物，後來改用陣列，最近加入隨機數。下一步要用Vue改寫',
+            'css3 的Transform作業，結果越寫越開心。一開始手動寫出所有的食物，後來改用陣列，最近加入隨機數。下一步要用Vue改寫',
           link: 'https://codepen.io/MarionMa/pen/eGpvLY',
           company: '',
-          type: 'JS練習',
+          type: ['Javascript','css3'],
           mask: true
         },
         {
           name: 'Gaming',
-          description: '任職公司期間所執行的專案。底圖經過模糊化處理',
+          description: '任職公司期間所執行的專案。底圖經過模糊化處理。主要工作內容是設計版面、切版、規劃公版以及系統化css，後期使用vue.js與前端工程師協作。',
           link: '',
           company: 'Keep secret',
-          type: '網頁設計 + 切版 + 動態',
+          type: ['網頁設計','UX規劃','pug/html','scss/css3', 'Vue.js','SPA','vue element'],
           mask: true
         }
       ]
@@ -95,7 +94,7 @@ export default {
 </script>
 <style lang="scss">
 $mask: #362fd1;
-$neon_word: #00ff00;
+$neon_word: #dbd31c;
 #section1 {
   padding: 0;
   overflow: hidden;
@@ -147,11 +146,10 @@ $neon_word: #00ff00;
     position: relative;
     min-height: 200px;
     padding-left: 20px;
-    flex: 2;
+    flex: 1;
     @media (max-width: 767px) {
       min-height: 150px;
       padding-top: 20px;
-      flex: 1;
       h3 {
         margin: 30px 0;
         font-size: 60px;
@@ -161,25 +159,19 @@ $neon_word: #00ff00;
   .meta {
     padding: 0 20px;
     flex: 1;
-    display: flex;
     flex-direction: column;
     position: relative;
     line-height: 20px;
-    .reportLink {
-      width: 40%;
-      position: relative;
-      bottom: 0;
-      margin: 10px 0 0;
-      text-align: center;
-      font-family: 'Rokkitt', serif;
-      @media (max-width: 767px) {
-        top: 10px;
-        margin-bottom: 30px;
-        width: 100%;
-      }
+  }
+  .reportLink {
+    width: 50%;
+    margin: 10px 0 0;
+    z-index: 1;
+    @media (max-width: 767px) {
+      margin-bottom: 30px;
+      width: 80%;
     }
   }
-
   .company {
     font-size: 18px;
     line-height: 1;
@@ -193,10 +185,16 @@ $neon_word: #00ff00;
     font-family: 'Rokkitt', serif;
   }
   .type {
-    font-size: 14px;
-    line-height: 1;
-    margin-bottom: 5px;
+    display: inline-block;
+    margin: 0 5px 5px 0;
+    // font-size: 14px;
     color: #aaa;
+    line-height: 34px;
+    height: 34px;
+    padding: 0 20px;
+    border: 1px solid #aaa;
+    border-radius: 36px;
+    overflow: hidden;
   }
   .des {
     color: #eee;

@@ -30,18 +30,16 @@ section#resume
               p 
                 b 出生年
                 |&nbsp&nbsp1988
-              p
-                b 活動地點
-                |&nbsp&nbsp台北、台中
+              //- p
+              //-   b 活動地點
+              //-   |&nbsp&nbsp台北、台中
               p 
                 b 工作經驗
                 |&nbsp&nbsp5年
               p
                 b 求學過程
-                br
-                |國立政治大學 斯拉夫語文學系 俄文組
-                br
-                |資策會 UI/UX 設計師養成班
+              p 國立政治大學 斯拉夫語文學系 俄文組
+              p 資策會 UI/UX 設計師養成班
       el-col(:xs="24" :sm="8")
         u-animate(
           name="fadeInUp"
@@ -59,7 +57,7 @@ section#resume
               p 愛酷3C 外電編譯
               p 9sPlay 行銷專員
               p 現職 網頁設計師
-      el-col(:xs="24" :sm="16" :md="8")
+      el-col(:xs="24" :sm="8")
         u-animate(
           name="fadeInUp"
           delay=".5s"
@@ -73,15 +71,15 @@ section#resume
             .block-title 專業技能
             .block-content.flex-display
               p pug/html
-                pieChart(chartPercent="60")
+                //- pieChart(chartPercent="60")
               p scss/css
-                pieChart(chartPercent="80")
+                //- pieChart(chartPercent="80")
               p javascript
-                pieChart(chartPercent="50")
+                //- pieChart(chartPercent="50")
               p vue.js
-                pieChart(chartPercent="60")
+                //- pieChart(chartPercent="60")
               p photoshop
-                pieChart(chartPercent="70")
+                //- pieChart(chartPercent="70")
       el-col(:xs="24" :sm="8")
         u-animate(
           name="fadeInUp"

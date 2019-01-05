@@ -35,12 +35,13 @@ section#section0(ref="aboutMe")
             //- h4 馬麗安 , Marion Ma
             //- h5 網頁設計師:
             p
-              b 我是馬麗安，兩年前轉換跑道成為網頁設計師。
+              b 我是馬麗安，成為網頁設計師之前，曾經是: FB廣告投放手、英語文件翻譯、俄文業務、外電新聞編譯。
+              br
+              |兩年前成功轉換跑道，曾接受數位時代雜誌的文科生轉職專題採訪，連結在下方。
               br
               |目前持續自學Javascript以加強深度；目標是成為前端工程師。
             //- p  過去曾擔任過: FB廣告投放手、英語文件翻譯、俄文業務、外電新聞編譯。
-            p  剛自學校畢業的時候，完全沒料到會過著敲鍵盤的日子。曾接受數位時代雜誌的文科生轉職專題採訪，連結在下方。
-            p  因為喜歡說故事，所以跑去新聞業；想了解行銷，在手遊代理商做過FB操盤。今天，在最貼近人的行動裝置上，用網頁說故事。
+            //- p 過去幾年，因為喜歡說故事，所以跑去新聞業；想了解行銷，在手遊代理商做過FB操盤。今天，在最貼近人的行動裝置上，用網頁說故事。
             //- p  在設計和程式這兩件事上面，我依然是麻瓜一枚。在浩瀚的網頁世界裡，相信自己能完成任務，保持樂觀，不服輸，然後繼續學習。
             p.btw 個人網頁使用Vue-cil為腳手架
               br
@@ -88,9 +89,11 @@ export default {
 </script>
 <style lang="scss">
 #section0 {
-  padding: 40px 80px 100px;
+  margin: 40px 0 100px;
+  // max-height: 800px;
+  overflow: hidden;
   @media only screen and (max-width: 786px) {
-    padding: 30px 0 30px;
+    margin: 30px 0 30px;
   }
 }
 .aboutMeHeader {
@@ -155,7 +158,7 @@ export default {
   }
 }
 .reportLink {
-  background-color: #f6a2ee;
+  background-color: #50A7C2;
   background-image: linear-gradient(-225deg, #96deda 0%, #57F2CC 48%, #50A7C2 100%);
   border-radius: 5px;
   border: 0;
@@ -170,7 +173,6 @@ export default {
   a {
     display: block;
     width: 100%;
-    padding: 5px;
     text-decoration: none;
     font-size: 18px;
   }
@@ -183,7 +185,7 @@ export default {
 }
 .animatedTitle {
   position: absolute;
-  bottom: 10%;
+  top: 20%;
   font-size: 5rem;
   padding-left: 5%;
   font-style: italic;

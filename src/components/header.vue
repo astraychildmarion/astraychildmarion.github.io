@@ -95,15 +95,15 @@ export default {
     font-size: 28px;
     vertical-align: text-top;
     &:hover {
-      color: #00ff00;
+      color: #dbd31c;
       text-shadow: 1px #111;
       transition: all 0.5s;
     }
   }
   @media (max-width: 480px) {
-    padding: 5px 10px;
-    font-size: 18px;
-    margin-top: 10px;
+    padding: 0px;
+    font-size: 16px;
+    // margin-top: 10px;
   }
 }
 .headerItemLink {
@@ -118,8 +118,11 @@ export default {
     color: #ccc;
     margin: 0 20px;
     text-align: center;
+    @media (max-width: 480px) {
+      margin: 0 10px;
+    }
     &:hover {
-      color: #00ff00;
+      color: #dbd31c;
       text-shadow: 1px #111;
       transition: all 0.5s;
     }

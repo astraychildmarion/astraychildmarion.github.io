@@ -1,9 +1,9 @@
 <template lang="pug">
 #index(ref="indexPage")
-  .bgWrapper
-    img(src="../assets/keepmovingon.jpg" :class="{ bigimg: noBlur}").indexImg
-    .blurBg(v-if="noBlur == !true")
-    .targetPoint(@mouseenter="noBlur = true" class="animated infinite flash")
+  //- .bgWrapper
+  //-   img(src="../assets/keepmovingon.jpg" :class="{ bigimg: noBlur}").indexImg
+  //-   .blurBg(v-if="noBlur == !true")
+  //-   .targetPoint(@mouseenter="noBlur = true" class="animated infinite flash")
   .indexTitle
     h5 Stay optimistic.
     h5 And
@@ -17,7 +17,7 @@ export default {
   name: 'indexPic',
   data: function () {
     return {
-      noBlur: false,
+      noBlur: true,
       indexh: ''
     }
   },
@@ -48,53 +48,53 @@ $gradientBg: rgba(255, 255, 255, 0.5);
 
 .el-main {
   padding: 0;
+  overflow: hidden;
 }
 #index {
-  display: flex;
+  // display: flex;
   padding-bottom: 100px;
   position: relative;
 }
-.bgWrapper {
-  flex: 1;
-  height: 100vh;
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  @media (max-width: 767px) {
-    display: none;
-  }
-  .targetPoint {
-    width: 50px;
-    height: 50px;
-    background: transparent url("../assets/like.png") no-repeat;
-    background-size: 100%;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    z-index: 5;
-    filter: hue-rotate(1);
-    cursor: pointer;
-    &:hover {
-      filter: hue-rotate(150deg);
-    }
-  }
-}
+// .bgWrapper {
+//   flex: 1;
+//   height: 100vh;
+//   display: inline-block;
+//   position: relative;
+//   overflow: hidden;
+//   @media (max-width: 767px) {
+//     display: none;
+//   }
+//   .targetPoint {
+//     width: 50px;
+//     height: 50px;
+//     background: transparent url("../assets/like.png") no-repeat;
+//     background-size: 100%;
+//     border-radius: 50%;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     margin: auto;
+//     z-index: 5;
+//     filter: hue-rotate(1);
+//     cursor: pointer;
+//     &:hover {
+//       filter: hue-rotate(150deg);
+//     }
+//   }
+// }
 .indexTitle {
   display: flex;
   flex-direction: column;
-  flex: 2;
+  // flex: 2;
   position: relative;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #fff;
-  @media (max-width: 767px) {
-    height: 100vh;
-  }
+  background:linear-gradient(to top, #000 5%, #2e1437 50%, #362fd1 90%);
+  height: 100vh;
   h5 {
     font-size: 2rem;
     margin: 10px auto;
