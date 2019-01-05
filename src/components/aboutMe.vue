@@ -42,7 +42,9 @@ section#section0(ref="aboutMe")
             p  剛自學校畢業的時候，完全沒料到會過著敲鍵盤的日子。曾接受數位時代雜誌的文科生轉職專題採訪，連結在下方。
             p  因為喜歡說故事，所以跑去新聞業；想了解行銷，在手遊代理商做過FB操盤。今天，在最貼近人的行動裝置上，用網頁說故事。
             //- p  在設計和程式這兩件事上面，我依然是麻瓜一枚。在浩瀚的網頁世界裡，相信自己能完成任務，保持樂觀，不服輸，然後繼續學習。
-            p.btw 個人網頁使用Vue-cil為腳手架，webpack 打包 scss + pug。
+            p.btw 個人網頁使用Vue-cil為腳手架
+              br
+              |webpack 打包 scss + pug。
             button.reportLink
               a(
                 href="https://www.bnext.com.tw/article/48027/coding-change-marian-life"

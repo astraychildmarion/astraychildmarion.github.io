@@ -37,29 +37,29 @@ export default {
           nameCn: "作品集"
         }
       ]
-    };
+    }
   },
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-    console.log("scrolling Injected");
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+    console.log('scrolling Injected')
   },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
-    console.log("scrolling Destroyed");
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.handleScroll)
+    console.log('scrolling Destroyed')
   },
   methods: {
-    handleScroll: function(e) {
-      window.scrollY > 50 ? (this.scrollTop = false) : (this.scrollTop = true);
+    handleScroll: function (e) {
+      window.scrollY > 50 ? (this.scrollTop = false) : (this.scrollTop = true)
     },
-    jump(selector) {
-      let sectionTag = document.querySelector(selector);
-      console.log(sectionTag);
-      document.body.scrollTop = sectionTag.offsetTop;
-      document.documentElement.scrollTop = sectionTag.offsetTop;
-      window.pageYOffset = sectionTag.offsetTop;
+    jump (selector) {
+      let sectionTag = document.querySelector(selector)
+      console.log(sectionTag)
+      document.body.scrollTop = sectionTag.offsetTop
+      document.documentElement.scrollTop = sectionTag.offsetTop
+      window.pageYOffset = sectionTag.offsetTop
     }
   }
-};
+}
 </script>
 <style lang="scss">
 .el-header {
@@ -82,7 +82,7 @@ export default {
   text-decoration: none;
   b {
     font-family: "Caveat", serif;
-     font-size: 14px; 
+     font-size: 14px;
   }
 }
 .headerLink {

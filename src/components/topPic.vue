@@ -11,37 +11,37 @@
     goDown(v-show="noBlur" :scrolld="indexh")
 </template>
 <script>
-import goDown from "./goDown";
+import goDown from './goDown'
 
 export default {
   name: 'indexPic',
-  data: function() {
+  data: function () {
     return {
       noBlur: false,
-      indexh: ""
-    };
+      indexh: ''
+    }
   },
   components: {
     goDown
   },
   watch: {
-    indexh(val) {
-      this.indexh = val;
+    indexh (val) {
+      this.indexh = val
     }
   },
-  mounted() {
-    this.getIndexHeight();
+  mounted () {
+    this.getIndexHeight()
     window.onresize = () => {
-      this.getIndexHeight();
-    };
+      this.getIndexHeight()
+    }
   },
   methods: {
-    getIndexHeight: function() {
-      this.indexh = this.$refs.indexPage.clientHeight;
-      return this.indexh;
+    getIndexHeight: function () {
+      this.indexh = this.$refs.indexPage.clientHeight
+      return this.indexh
     }
   }
-};
+}
 </script>
 <style lang="scss">
 $gradientBg: rgba(255, 255, 255, 0.5);
@@ -64,9 +64,9 @@ $gradientBg: rgba(255, 255, 255, 0.5);
     display: none;
   }
   .targetPoint {
-    width: 30px;
-    height: 30px;
-    background: transparent url("../assets/target.png") no-repeat;
+    width: 50px;
+    height: 50px;
+    background: transparent url("../assets/like.png") no-repeat;
     background-size: 100%;
     border-radius: 50%;
     position: absolute;
@@ -76,10 +76,10 @@ $gradientBg: rgba(255, 255, 255, 0.5);
     bottom: 0;
     margin: auto;
     z-index: 5;
-    filter: brightness(1);
+    filter: hue-rotate(1);
     cursor: pointer;
     &:hover {
-      filter: brightness(0.2);
+      filter: hue-rotate(150deg);
     }
   }
 }

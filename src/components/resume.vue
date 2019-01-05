@@ -1,7 +1,7 @@
 <template lang="pug">
 section#resume
   u-animate-container
-    el-row(gutter="20")
+    el-row(:gutter="20")
       el-col(:xs="24" :sm="8")
         .block.personal
           u-animate(
@@ -59,7 +59,7 @@ section#resume
               p 愛酷3C 外電編譯
               p 9sPlay 行銷專員
               p 現職 網頁設計師
-      el-col(:xs="24" :sm="8")
+      el-col(:xs="24" :sm="16" :md="8")
         u-animate(
           name="fadeInUp"
           delay=".5s"
@@ -69,14 +69,19 @@ section#resume
           animateClass="animated"
           :begin="false"
           )
-          .block
+          .block.block-autoH
             .block-title 專業技能
-            .block-content
+            .block-content.flex-display
               p pug/html
+                pieChart(chartPercent="60")
               p scss/css
+                pieChart(chartPercent="80")
               p javascript
+                pieChart(chartPercent="50")
               p vue.js
-              p adobe photoshop
+                pieChart(chartPercent="60")
+              p photoshop
+                pieChart(chartPercent="70")
       el-col(:xs="24" :sm="8")
         u-animate(
           name="fadeInUp"
@@ -124,12 +129,14 @@ section#resume
 </template>
 <script>
 import { UAnimateContainer, UAnimate } from 'vue-wow'
+import pieChart from "./pieChart"
 
 export default {
   name: "resume",
   components: {
     UAnimateContainer,
-    UAnimate
+    UAnimate,
+    pieChart
   },
   data: function() {
     return {};
@@ -224,6 +231,17 @@ export default {
     b{
       color: #888;
     }
+    &.flex-display{
+      display: flex;
+      flex-wrap: wrap;
+      p{
+        margin: 1em;
+      }
+    }
+  }
+  &.block-autoH{
+    min-height: 250px;
+    height: auto;
   }
 }
 </style>
