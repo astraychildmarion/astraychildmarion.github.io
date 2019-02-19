@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import router from './router'
 import 'element-ui/lib/theme-chalk/index.css'
-import bus from './components/bus'
 import {
   Col,
   Row,
@@ -29,7 +28,6 @@ new Vue({
   el: '#app',
   data () {
     return {
-      bus: bus
     }
   },
   router,
