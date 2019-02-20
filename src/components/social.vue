@@ -1,34 +1,55 @@
 <template lang="pug">
-  .social-wrapper()
+  .social-wrapper
     a(
-    href="https://www.linkedin.com/in/marion-ma-326248100"
-    title="Marion LinkedIn"
-    target="_blank"
-    @mouseover="insocial = true"
-    @mouseout="insocial = false"
-    :class="{socialhover: insocial}"
-    )
-      img(src="../assets/icons/instagram.png")
-    a(
-    href="https://www.linkedin.com/in/marion-ma-326248100"
-    title="Marion LinkedIn"
-    target="_blank"
-    )
-      img(src="../assets/icons/linkedin.png")
-    a(
-      href="mailto:allidareused@gmail.com"
-      title="Contact Me!"
-    )
-      img(src="../assets/icons/gmail.png")
+      v-for="item in links"
+      :key="item.index"
+      :href="item.href"
+      :class="{socialhover: showColor}"
+      :title="item.title"
+      @mouseover="removeFilter(index)"
+      @mouseout="removeFilter(index)"
+      )
+      img.socialIcon(:src="item.imgSrc")
 </template>
 <script>
 export default {
   name: 'socialLink',
   data: () => {
     return {
-      insocial: false
+      insocial: false,
+      showColor: false,
+      links: [
+        {
+          href:'https://www.linkedin.com/in/marion-ma-326248100',
+          title: 'Marion LinkedIn',
+          imgSrc: require('../assets/icons/linkedin.png'),
+          showColor: false
+        },
+        {
+          href:'',
+          title: 'Contact Me!',
+          imgSrc:require('../assets/icons/instagram.png'),
+          showColor: false
+        },
+        {
+          href:'mailto:allidareused@gmail.com',
+          title: 'Contact Me!',
+          imgSrc: require('../assets/icons/gmail.png'),
+          showColor: false
+        },
+        {
+          href:'',
+          title: '',
+          imgSrc:'',
+        }
+      ]
     }
-  }
+  },
+  methods: {
+    removeFilter: function (index) {
+      this.links[index].showColor = !this.links[index].showColor
+    }
+  },  
 }
 </script>
 <style lang="scss">

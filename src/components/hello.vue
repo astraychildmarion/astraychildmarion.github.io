@@ -1,7 +1,7 @@
 <template lang="pug">
   .hello-wrapper
     .text-block
-      h3 Hello, I'm
+      h2 Hello, I'm
       h1
         strong MARION MA
       social-link
@@ -30,14 +30,17 @@ export default {
   .text-block{
     padding-left: 50px;
     text-align: center;
-    font-family: 'Dosis', sans-serif;
+    // font-family: 'Dosis', sans-serif;
     color: #fff;
     h1{
       position: relative;
-      font-size: 2em;
+      font-size: 3em;
       margin: 0;
-      @media only screen and (max-width: 875px){
-        font-size: 3em;
+      @media only screen and (max-width: 1367px){
+        font-size: 4em;
+      }
+      @media only screen and (max-width: 600px){
+        // font-size: 3em;
       }
     &:before{
       content: "";
@@ -74,9 +77,11 @@ export default {
         }
       }
     }
-    h3{
-      margin: 0;
+    h2{
+      margin: 0 0 20px 0;
       font-style: italic;
+      font-size: 2em;
+      font-weight: 300;
     }
   }
 }

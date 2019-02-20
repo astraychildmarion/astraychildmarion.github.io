@@ -40,8 +40,8 @@ body{
   position: relative;
   background-color: #f7f7f8;
   color:$text-color;
-  font-family: 'Dosis', sans-serif;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  // font-family: 'Noto Sans TC', sans-serif;
 }
 .el-header, .el-footer {
   background-color: #dce6ef;

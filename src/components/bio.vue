@@ -2,7 +2,7 @@
   .bio-wrapper
     h3 MY BIO
     .story-board(v-for="item in stories")
-      h5 {{item.title}}
+      h5.story-title {{item.title}}
       p {{item.story1}}
       p {{item.story2}}
       p {{item.story3}}
@@ -38,8 +38,17 @@ export default {
     @media only screen and (max-width: 875px){
       padding: 20px 30px;
     }
+    @media only screen and (max-width: 360px){
+      padding: 10px;
+    }
   &:last-child {
     margin-bottom: 0px;
+  }
+  .story-title{
+    font-style: italic;
+  }
+  p{
+    line-height: 1.5;
   }
 }
 </style>

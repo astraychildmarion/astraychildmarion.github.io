@@ -2,7 +2,7 @@
   .project-wrapper
     h3 MY PROJECT
     .story-board(v-for="item in stories")
-      h5 {{item.title}}
+      h5.story-title {{item.title}}
       .story-content
         img(:src="item.url")
         p {{item.story}}
@@ -46,7 +46,7 @@ export default {
           title:'My portfolio site',
           story: 'Since the second year of my web developer career, I seldom design, because I spend most of time on JavaScript. I tried some styles then I found out that colors suit me.',
           story2: 'I used most of the skills I had learned. The website is simple but it is a milestone for me. Anyway, thank you for browsing : )',
-          skill: ['css','html','Web Design','JavaScript', 'Vue.js', 'vue cil', 'Webpack']
+          skill: ['css','html','Web Design','element-ui','JavaScript', 'Vue.js', 'vue cil', 'Webpack']
         },
       ]
     }
