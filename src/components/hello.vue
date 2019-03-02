@@ -26,11 +26,13 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 600px;
+    @media only screen and (max-width: 769px){
+      height: 500px;
+      background-position: center;
+    }
   .text-block{
-    padding-left: 50px;
     text-align: center;
-    // font-family: 'Dosis', sans-serif;
     color: #fff;
     h1{
       position: relative;
@@ -69,7 +71,7 @@ export default {
       zoom: 1;
       @media only screen and (max-width: 875px){
           top: unset;
-          bottom: -50%;
+          bottom: -20%;
           left: 0;
           right: 0;
           margin: 0 auto;

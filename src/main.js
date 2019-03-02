@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import router from './router'
 import 'element-ui/lib/theme-chalk/index.css'
+import animate from 'animate.css'
+import VueWow from 'vue-wow'
 import {
   Col,
   Row,
@@ -21,6 +23,8 @@ Vue.use(Header)
 Vue.use(Aside)
 Vue.use(Main)
 Vue.use(Footer)
+Vue.use(animate)
+Vue.use(VueWow)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

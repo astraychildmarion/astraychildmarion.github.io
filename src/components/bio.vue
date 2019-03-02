@@ -1,13 +1,17 @@
 <template lang="pug">
   .bio-wrapper
     h3 MY BIO
-    .story-board(v-for="item in stories")
-      h5.story-title {{item.title}}
-      p {{item.story1}}
-      p {{item.story2}}
-      p {{item.story3}}
+    u-animate-container
+      u-animate(name="flipInX" :offset="150")
+        .story-board(v-for="(item, key) in stories", key="index")
+          h5.story-title {{item.title}}
+          p {{item.story1}}
+          p {{item.story2}}
+          p {{item.story3}}
 </template>
 <script>
+import {UAnimateContainer, UAnimate} from 'vue-wow'
+
 export default {
   name: 'bio',
   data() {
@@ -21,6 +25,10 @@ export default {
         }
       ]
     }
+  },
+  components: {
+    UAnimateContainer,
+    UAnimate
   }
 }
 </script>

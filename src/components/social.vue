@@ -1,23 +1,22 @@
 <template lang="pug">
   .social-wrapper
     a(
-      v-for="item in links"
-      :key="item.index"
+      v-for="(item,index) in links"
+      :key="index"
       :href="item.href"
-      :class="{socialhover: showColor}"
       :title="item.title"
-      @mouseover="removeFilter(index)"
-      @mouseout="removeFilter(index)"
+      target="_blank"
+      @mouseenter="addStyle"
+      @mouseleave="removeStyle"
       )
       img.socialIcon(:src="item.imgSrc")
 </template>
 <script>
 export default {
   name: 'socialLink',
-  data: () => {
+  data: function () {
     return {
       insocial: false,
-      showColor: false,
       links: [
         {
           href:'https://www.linkedin.com/in/marion-ma-326248100',
@@ -37,19 +36,43 @@ export default {
           imgSrc: require('../assets/icons/gmail.png'),
           showColor: false
         },
-        {
-          href:'',
-          title: '',
-          imgSrc:'',
-        }
       ]
     }
   },
+  mounted() {
+
+  },
   methods: {
-    removeFilter: function (index) {
-      this.links[index].showColor = !this.links[index].showColor
+    addStyle: function (elem) {
+        this.getSiblings(elem).forEach(function (sib) {
+        sib.classList.add('socialNonActive')
+      })
+    },
+    removeStyle: function (elem) {
+        this.getSiblings(elem).forEach(function (sib) {
+        sib.classList.remove('socialNonActive')
+      })
+    },
+    getSiblings: function (elem){
+      let target = elem.target
+      let siblings = []
+      let previous = target.previousSibling
+      let next = target.nextSibling
+      while (previous) {
+        if (previous.nodeType === 1 && previous !== target) {
+          siblings.push(previous)
+        }
+          previous = previous.previousSibling
+      }
+      while (next) {
+        if (next.nodeType === 1 && next !== target) {
+          siblings.push(next)
+        }
+          next = next.nextSibling
+      }
+      return siblings
     }
-  },  
+  },
 }
 </script>
 <style lang="scss">
@@ -62,11 +85,11 @@ export default {
       height: 30px;
       img{
         width: 100%;
-        filter: grayscale(100%) brightness(100%);
+        transition: filter .5s;
       }
-      &.socialhover {
+      &.socialNonActive {
         img {
-          filter: grayscale(0%);
+          filter: grayscale(100%) brightness(100%);
           transition: filter .5s;
         }
       }

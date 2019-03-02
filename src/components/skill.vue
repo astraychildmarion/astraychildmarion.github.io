@@ -1,76 +1,67 @@
 <template lang="pug">
   .skill-wrapper
     h3 MY SKILL
-    el-row(:gutter="10")
-     el-col(v-for="item in stories" :xs="8" :sm="4")
-      .story-board
-        img(:src="item.src")
-        h4 {{item.skill}}
-        p {{item.story}}
+    el-row(:gutter="20")
+      u-animate-container
+        el-col.stories(v-for="(item,index) in stories" :xs="8" :sm="4")
+          u-animate(name="flipInX" :offset="100" duration=".5s")
+            .story-board
+              u-animate(name="slideInUp" :offset="100" delay=".2s" duration=".5s")
+                img(:src="item.src")
+              h4 {{item.skill}}
+              p {{item.story}}
 </template>
 <script>
+import {UAnimateContainer, UAnimate} from 'vue-wow'
+
 export default {
   name: 'skill',
   data() {
     return {
       stories: [
+       {
+          src: require('../assets/icons/javascript.png'),
+          skill:'JavaScript',
+        },
+        {
+          src: require('../assets/icons/vue.png'),
+          skill:'Vue.js',
+        },
         {
           src: require('../assets/icons/css.png'),
           skill:'CSS',
-          // story: 'I am familiar to CSS3 and SCSS pre-processor. I do want to learn more about CSS grid.'
         },
         {
           src: require('../assets/icons/sass.png'),
           skill:'SASS',
-          // story: 'Usually, I use JADE/PUG.'
         },
         {
           src: require('../assets/icons/html.png'),
           skill:'HTML',
-          // story: 'Usually, I use JADE/PUG.'
         },
         {
           src: require('../assets/icons/pug.png'),
           skill:'PUG',
-          // story: 'Usually, I use JADE/PUG.'
-        },
-        {
-          src: require('../assets/icons/javascript.png'),
-          skill:'JavaScript',
-          // story: 'I learned Jquery before'
         },
         {
           src: require('../assets/icons/jquery.png'),
           skill:'Jquery',
-          story: ''
         },
         {
           src: require('../assets/icons/bt.png'),
           skill:'BootStrap',
-          story: ''
-        },
-        // {
-        //   src: require('../assets/icons/element.svg'),
-        //   skill:'element-ui',
-        //   story: ''
-        // },
-        {
-          src: require('../assets/icons/vue.png'),
-          skill:'Vue.js',
-          story: ''
         },
         {
           src: require('../assets/icons/photoshop.png'),
           skill:'PhotoShop',
           story: ''
-        },
-        // {
-        //   src: require('../assets/icons/axure.png'),
-        //   skill:'Axure',
-        //   story: ''
-        // },
+        }
       ]
     }
+  },
+  components: {
+    UAnimateContainer,
+    UAnimate
   }
 }
 </script>
@@ -81,14 +72,29 @@ export default {
     padding-top: 5px;
     padding-bottom: 5px;
   }
+  .stories{
+    border-radius: 8px;
+    &:nth-child(2n+1) .story-board {
+      box-shadow: 5px 5px #7EEFD8;
+    }
+    &:nth-child(2n) .story-board{
+      box-shadow: 5px 5px #C3A0E4;
+    }
+  }
   .story-board{
     text-align: center;
+    margin-bottom: 10px;
+    padding: 30px 20px;
+    border: 1px solid #333;
     img{
       width: 50px;
       height: 50px;
       @media only screen and (max-width: 360px){
         width: 40px;
         height: 40px;
+      }
+      &:hover{
+
       }
     }
   }

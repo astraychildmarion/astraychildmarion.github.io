@@ -1,7 +1,7 @@
 <template lang="pug">
   #app
     el-container
-      my-header
+      //- my-header
       el-main
         hello
         bio
@@ -55,8 +55,12 @@ body{
 div[class$="-wrapper"]{
   padding: 50px;
   box-sizing: border-box;
+  @media only screen and (max-width: 769px){
+    padding: 20px 10px 40px;
+  }
   h3{
     padding: 10px 0;
+    font-size: 2em;
   }
 }
 
