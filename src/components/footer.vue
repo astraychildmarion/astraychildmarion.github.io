@@ -1,27 +1,31 @@
 <template lang="pug">
-.footer
-  p 合作機會歡迎聯絡。
-  p 請點選右側Gmail圖示，或是寄信至allidareused@gmail.com
-  p 2018 Marion Ma Copy Right
+  .footer-wrap
+    span © 2019 Marion Ma
+    social-link
 </template>
 <script>
+import socialLink from './social'
+
 export default {
-  name: 'foot'
+  name: 'myFooter',
+  data () {
+    return {
+    }
+  },
+  components: {
+    socialLink
+  }
 }
 </script>
 <style lang="scss">
-.footer{
-  position: absolute;
-  width: 100%;
-  height: 50px;
-  bottom: 0;
-  z-index: 10;
-  text-align: center;
-  background-color: #000;
-  color: antiquewhite;
-}
-.el-footer{
-  padding: 0;
-  height:unset;
+.footer-wrap{
+  .social-wrapper{
+    float: right;
+    padding: 0;
+    margin: 0;
+    a{
+      vertical-align: text-bottom;
+    }
+  }
 }
 </style>
