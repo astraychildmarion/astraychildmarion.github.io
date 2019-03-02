@@ -3,7 +3,7 @@
     h3 MY SKILL
     el-row(:gutter="20")
       u-animate-container
-        el-col.stories(v-for="(item,index) in stories" :xs="8" :sm="4")
+        el-col.stories(v-for="(item,index) in stories" :xs="8" :sm="4" :key="index")
           u-animate(name="flipInX" :offset="100" duration=".5s")
             .story-board
               u-animate(name="slideInUp" :offset="100" delay=".2s" duration=".5s")
@@ -16,45 +16,44 @@ import {UAnimateContainer, UAnimate} from 'vue-wow'
 
 export default {
   name: 'skill',
-  data() {
+  data () {
     return {
       stories: [
-       {
+        {
           src: require('../assets/icons/javascript.png'),
-          skill:'JavaScript',
+          skill: 'JavaScript'
         },
         {
           src: require('../assets/icons/vue.png'),
-          skill:'Vue.js',
+          skill: 'Vue.js'
         },
         {
           src: require('../assets/icons/css.png'),
-          skill:'CSS',
+          skill: 'CSS'
         },
         {
           src: require('../assets/icons/sass.png'),
-          skill:'SASS',
+          skill: 'SASS'
         },
         {
           src: require('../assets/icons/html.png'),
-          skill:'HTML',
+          skill: 'HTML'
         },
         {
           src: require('../assets/icons/pug.png'),
-          skill:'PUG',
+          skill: 'PUG'
         },
         {
           src: require('../assets/icons/jquery.png'),
-          skill:'Jquery',
+          skill: 'Jquery'
         },
         {
           src: require('../assets/icons/bt.png'),
-          skill:'BootStrap',
+          skill: 'BootStrap'
         },
         {
           src: require('../assets/icons/photoshop.png'),
-          skill:'PhotoShop',
-          story: ''
+          skill: 'PhotoShop'
         }
       ]
     }
@@ -92,6 +91,7 @@ export default {
       @media only screen and (max-width: 360px){
         width: 40px;
         height: 40px;
+        padding: 20px 10px;
       }
       &:hover{
 

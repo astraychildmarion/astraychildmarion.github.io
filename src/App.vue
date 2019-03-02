@@ -1,7 +1,7 @@
 <template lang="pug">
   #app
     el-container
-      //- my-header
+      my-header
       el-main
         hello
         bio
@@ -49,7 +49,7 @@ body{
   text-align: center;
   line-height: 60px;
 }
-.el-main{
+#app .el-main{
   padding: 0;
 }
 div[class$="-wrapper"]{

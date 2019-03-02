@@ -19,41 +19,40 @@ export default {
       insocial: false,
       links: [
         {
-          href:'https://www.linkedin.com/in/marion-ma-326248100',
+          href: 'https://www.linkedin.com/in/marion-ma-326248100',
           title: 'Marion LinkedIn',
           imgSrc: require('../assets/icons/linkedin.png'),
           showColor: false
         },
         {
-          href:'',
+          href: '',
           title: 'Contact Me!',
-          imgSrc:require('../assets/icons/instagram.png'),
+          imgSrc: require('../assets/icons/instagram.png'),
           showColor: false
         },
         {
-          href:'mailto:allidareused@gmail.com',
+          href: 'mailto:allidareused@gmail.com',
           title: 'Contact Me!',
           imgSrc: require('../assets/icons/gmail.png'),
           showColor: false
-        },
+        }
       ]
     }
   },
-  mounted() {
-
+  mounted () {
   },
   methods: {
     addStyle: function (elem) {
-        this.getSiblings(elem).forEach(function (sib) {
+      this.getSiblings(elem).forEach(function (sib) {
         sib.classList.add('socialNonActive')
       })
     },
     removeStyle: function (elem) {
-        this.getSiblings(elem).forEach(function (sib) {
+      this.getSiblings(elem).forEach(function (sib) {
         sib.classList.remove('socialNonActive')
       })
     },
-    getSiblings: function (elem){
+    getSiblings: function (elem) {
       let target = elem.target
       let siblings = []
       let previous = target.previousSibling
@@ -62,17 +61,17 @@ export default {
         if (previous.nodeType === 1 && previous !== target) {
           siblings.push(previous)
         }
-          previous = previous.previousSibling
+        previous = previous.previousSibling
       }
       while (next) {
         if (next.nodeType === 1 && next !== target) {
           siblings.push(next)
         }
-          next = next.nextSibling
+        next = next.nextSibling
       }
       return siblings
     }
-  },
+  }
 }
 </script>
 <style lang="scss">
