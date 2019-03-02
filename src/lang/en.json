@@ -1,0 +1,22 @@
+{
+  "langChoose": "Please Choose Language",
+  "stories": {
+    "title": "My Bio",
+    "story1": "I am not always spending time on the computer, but spent my teens on manga and school learning. Finally, I graduated from one of the best university in Taiwan, and my major was Russian.",
+    "story2": "When I quit my third job, I decided to visit California, the States. My high school best friend worked as a web-designer in LA. I stayed with her for weeks. She showed me her works and inspired me to learn web design. In the next 6 months, I joined a program to teach people how to bulid a website and design.",
+    "story3": "It had been 2 years since I changed my careers as a web designer. I think I would keep going and explore more about web development. "
+  },
+  "projects": {
+    "titlePocket": "Pucket Rus - My First Design",
+    "storyPocket": "This is my first project in life. 2 person spent 1 month start from scratch to build a internet shop.",
+    "storyPocket2": "I was the main visual designer and I made the amazing index affect with skoller.js. There is a link for introduction video.",
+    "titleAlchemy": "Alchemy Webpage refresh",
+    "storyAlchemy": "This is a case coroperated with a friend. Both of us did CSS job.",
+    "titleAlchemyMem": "Alchemy Member Center ",
+    "storyAlchemyMem": "This is another case coroperated with the same friend. I did the visual design, a lot of PhotoShop work. We modified CSS and made it like Boostarp for Alchemy system.",
+    "titleGaming": "Project at work - Gaming Platform",
+    "storyGaming": "We rewrote this project in Vue.js. I built components and wrote native Javascript to replace Jquery.",
+    "titlePortfolio": "My Portfolio Site",
+    "storyPortfolio": "I used most of the skills I had learned. The website is simple but it is a milestone for me. Anyway, thank you for browsing : )"
+  }
+}

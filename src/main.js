@@ -5,11 +5,15 @@ import router from './router'
 import 'element-ui/lib/theme-chalk/index.css'
 import animate from 'animate.css'
 import VueWow from 'vue-wow'
+import i18n from './lang'
+
 import {
   Col,
   Row,
   Container,
   Header,
+  Select,
+  Option,
   Aside,
   Main,
   Footer
@@ -20,22 +24,23 @@ Vue.use(Col)
 Vue.use(Row)
 Vue.use(Container)
 Vue.use(Header)
+Vue.use(Select)
+Vue.use(Option)
 Vue.use(Aside)
 Vue.use(Main)
 Vue.use(Footer)
 Vue.use(animate)
 Vue.use(VueWow)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+
 new Vue({
   el: '#app',
-  data () {
-    return {
-    }
-  },
-  router,
   components: { App },
   template: '<App/>',
+  i18n,
+  router,
   render: h => h(App)
 })

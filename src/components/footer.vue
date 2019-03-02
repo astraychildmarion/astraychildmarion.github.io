@@ -8,9 +8,8 @@ import socialLink from './social'
 
 export default {
   name: 'myFooter',
-  data() {
+  data () {
     return {
-
     }
   },
   components: {

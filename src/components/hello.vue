@@ -16,7 +16,7 @@ export default {
     }
   },
   components: {
-     socialLink
+    socialLink
   }
 }
 </script>

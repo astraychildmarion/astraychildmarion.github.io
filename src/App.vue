@@ -1,7 +1,7 @@
 <template lang="pug">
   #app
     el-container
-      //- my-header
+      my-header
       el-main
         hello
         bio
