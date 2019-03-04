@@ -3,7 +3,7 @@
     h3 MY SKILL
     el-row(:gutter="20")
       u-animate-container
-        el-col.stories(v-for="(item,index) in stories" :xs="8" :sm="4" :key="index")
+        el-col.stories(v-for="(item,index) in stories" :xs="12" :sm="8" :key="index")
           u-animate(name="flipInX" :offset="100" duration=".5s")
             .story-board
               u-animate(name="slideInUp" :offset="100" delay=".2s" duration=".5s")
