@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-// import en from '../src/lang/en'
-// import tw from '../src/lang/tw'
 
 Vue.use(VueI18n)
 
